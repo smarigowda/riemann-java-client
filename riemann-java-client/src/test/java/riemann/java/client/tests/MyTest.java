@@ -8,9 +8,9 @@ public class MyTest {
         System.out.println("my test for Riemann client...");
 
         for( int i=0; i<10; i++) {
-            double[] countOK = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 4.0, 5.0 }; // 2 out of 10 (1 out of 5)-- ok
-            double[] countWarning = { 0, 0, 0, 0, 12, 11, 10, 10, 9, 10 }; // 6 out of 10 (3 out of 5) -- warning
-            double[] countCritical = { 0, 0, 11, 11, 11, 10, 10, 10, 9, 10 }; // 8 out of 10 (2 out of 5)-- critical
+            double[] countOK = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 4.0, 5.0, 0, 0 }; // 2 out of 10 (1 out of 5)-- ok
+            double[] countWarning = { 0, 0, 0, 0, 12, 11, 10, 10, 9, 10, 0, 0 }; // 6 out of 10 (3 out of 5) -- warning
+            double[] countCritical = { 0, 0, 11, 11, 11, 10, 10, 10, 9, 10, 11, 11 }; // 8 out of 10 (2 out of 5)-- critical
 
             double[] count;
 //            count = countOK;

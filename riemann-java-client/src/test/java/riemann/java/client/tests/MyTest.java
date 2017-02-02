@@ -17,7 +17,7 @@ public class MyTest {
 //            count = countOK;
 //            count = countWarning;
             count = countCritical;
-
+            System.out.println("sending event: " + count[i]);
             try {
                 RiemannClient c = RiemannClient.tcp("localhost", 5555);
                 c.connect();

@@ -9,9 +9,9 @@ public class MyTest {
 
         for( int i=0; i<17; i++) {
 
-            double[] countOK = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 4.0, 5.0, 0, 0 }; // 2 out of 10 (1 out of 5)-- ok
-            double[] countWarning = { 0, 0, 0, 0, 12, 11, 10, 10, 9, 10, 0, 0 }; // 6 out of 10 (3 out of 5) -- warning
-            double[] countCritical = { 0, 0, 11, 11, 11, 10, 10, 10, 9, 10, 11, 11, 11, 11, 11, 11, 11 }; // 8 out of 10 (2 out of 5)-- critical
+            double[] countOK = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 4.0, 5.0, 0, 0 };
+            double[] countWarning = { 0, 0, 0, 0, 12, 11, 10, 10, 9, 10, 0, 0 };
+            double[] countCritical = { 0, 0, 11, 11, 11, 10, 10, 10, 9, 10, 11, 11, 11, 11, 11, 11, 11 };
 
             double[] count;
 //            count = countOK;
@@ -28,6 +28,11 @@ public class MyTest {
                         .tags("Kibana")
                         .send()
                         .deref(5000, java.util.concurrent.TimeUnit.MILLISECONDS);
+
+//                List<Proto.Event> le = c.query("tagged \"Kibana\" and metric > 0").deref(5000, java.util.concurrent.TimeUnit.MILLISECONDS);
+//                System.out.println(le);
+                c.close();
+
             } catch (Exception e) {
                 System.out.println("Exception..." + e);
             }
